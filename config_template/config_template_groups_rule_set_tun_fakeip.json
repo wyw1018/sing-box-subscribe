@@ -791,7 +791,7 @@
                  "tag": "geo_geosite_category-ads-all",
                  "type": "remote",
                  "format": "binary",
-                 "url": "https://ghproxy.net/https://raw.githubusercontent.com/senzyo/sing-box-rules/sing/geo/geosite/category-ads-all.srs"
+                 "url": "https://raw.githubusercontent.com/senzyo/sing-box-rules/sing/geo/geosite/category-ads-all.srs"
             },
             {
                 "tag": "AdGuard-DNS-Filter",
