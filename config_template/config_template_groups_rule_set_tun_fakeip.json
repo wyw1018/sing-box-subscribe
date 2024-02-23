@@ -19,8 +19,27 @@
         "server": "dns_block"
       },
       {
+        "domain_suffix": [
+            "macime.sogou.com",
+            "ime.sogou.com",
+            "beacon.qq.com",
+            "pinyin.sogou.com",
+            "account.sogou.com",
+            "sginput.qq.com",
+            "shouji.sogou.com",
+            "get.sogou.com",
+            "sec.miui.com"
+        ],
+        "server": "dns_block"
+      },
+      {
+        "domain_keyword": "avlyun",
+        "server": "dns_block"
+      },
+      {
        "server": "dns_block",
        "domain": [
+        "oth.str.mdt.qq.com",
         "10-awsind.bigdata.pub.neo.xiaomi.com",
         "11-c3.bigdata.ctc.neo.xiaomi.com",
         "3rd.mishop.pandora.xiaomi.com",
@@ -807,22 +826,17 @@
     ],
     "rules": [
       {
-        "domain": [
-            "oth.str.mdt.qq.com",
-            "otheve.beacon.qq.com",
-            "tracking.miui.com"
-        ],
-        "outbound": "block"
-      },
-      {
-        "domain_suffix": [
-            "macime.sogou.com",
-            "ime.sogou.com",
-            "pinyin.sogou.com",
-            "account.sogou.com",
-            "sginput.qq.com",
-            "shouji.sogou.com",
-            "get.sogou.com"
+        "package_name": [
+            "com.miui.notes",
+            "com.sohu.inputmethod.sogou.xiaomi",
+            "com.miui.micloudsyn",
+            "com.miui.vpnsdkmanager",
+            "com.miui.cloudservice",
+            "com.miui.cloudbackup", 
+            "com.miui.newmidrive",
+            "com.miui.guardprovider",
+            "com.miui.analytics",
+            "com.xiaomi.market"
         ],
         "outbound": "block"
       },
@@ -855,8 +869,27 @@
           ]
       },
       {
+        "domain_suffix": [
+            "macime.sogou.com",
+            "beacon.qq.com",
+            "ime.sogou.com",
+            "pinyin.sogou.com",
+            "account.sogou.com",
+            "sginput.qq.com",
+            "shouji.sogou.com",
+            "get.sogou.com",
+            "sec.miui.com"
+        ],
+        "outbound": "block"
+      },
+      {
+        "domain_keyword": "avlyun",
+        "outbound": "block"
+      },
+      {
        "outbound": "block",
        "domain": [
+        "oth.str.mdt.qq.com",
         "10-awsind.bigdata.pub.neo.xiaomi.com",
         "11-c3.bigdata.ctc.neo.xiaomi.com",
         "3rd.mishop.pandora.xiaomi.com",
