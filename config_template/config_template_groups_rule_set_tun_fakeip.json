@@ -743,7 +743,7 @@
   ],
   "route": {
     "auto_detect_interface": true,
-    "override_android_vpn": true
+    "override_android_vpn": true,
     "rule_set": [
             {
                 "tag": "GeoSite-CN",
@@ -782,12 +782,6 @@
                 "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/maxmind-cn-ipv6.srs"
             },
             {
-                "tag": "xiaomiDNSblocklist",
-                "type": "local",
-                "format": "source",
-                "path": "e:/sing-box-1.8.5-windows-amd64/xiaomiDNSblocklist.json"
-            },
-            {
                 "tag": "GeoIP-ChnRoutes2-CN-IPv4",
                 "type": "remote",
                 "format": "binary",
@@ -797,7 +791,7 @@
                  "tag": "geo_geosite_category-ads-all",
                  "type": "remote",
                  "format": "binary",
-                 "url": "https://ghproxy.net/https://raw.githubusercontent.com/senzyo/sing-box-rules/sing/geo/geosite/category-ads-all.srs",
+                 "url": "https://ghproxy.net/https://raw.githubusercontent.com/senzyo/sing-box-rules/sing/geo/geosite/category-ads-all.srs"
             },
             {
                 "tag": "AdGuard-DNS-Filter",
