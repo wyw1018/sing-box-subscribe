@@ -602,7 +602,7 @@
       "type": "selector",
       "outbounds": [
         "direct",
-        "{机场1}",
+        "{all}",
         "pagesvless",
         "flyvless",
         "proxy B",
@@ -611,7 +611,13 @@
         "proxy E"
       ]
     },
-
+    {
+       "tag": "subscribe",
+       "type": "selector",
+       "outbounds": [
+         "{机场1}"
+       ]
+    },
     {
       "tag": "direct",
       "type": "direct"
