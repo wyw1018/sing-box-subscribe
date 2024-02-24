@@ -612,13 +612,6 @@
       ]
     },
     {
-       "tag": "subscribe",
-       "type": "selector",
-       "outbounds": [
-         "{机场1}"
-       ]
-    },
-    {
       "tag": "direct",
       "type": "direct"
     },
