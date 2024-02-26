@@ -118,11 +118,6 @@
       "outbounds": [
         "direct",
         "{all}",
-        "pagesvless",
-        "flyvless",
-        "proxy B",
-        "proxy C",
-        "proxy D",
         "proxy E"
       ]
     },
@@ -137,108 +132,6 @@
     {
       "tag": "dns",
       "type": "dns"
-    },
-    {
-               "tag": "pagesvless",
-               "type": "vless",
-               "server": "23.227.39.24",
-               "server_port": 2053,
-               "uuid": "3ab06597-d921-449d-8e5c-4c348e197b58",
-               "flow": "",
-               "tls": {
-                  "enabled": true,
-                  "server_name": "cfpagesvless.wyw1018.cloudns.org",
-                  "insecure": false,
-                  "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                  }
-               },
-               "multiplex": {
-                  "enabled": false,
-                  "protocol": "smux",
-                  "max_streams": 32
-               },
-               "packet_encoding": "xudp",
-               "transport": {
-                  "type": "ws",
-                  "path": "/?ed=2048",
-                  "headers": {
-                      "Host": "cfpagesvless.wyw1018.cloudns.org"
-                  }
-              }
-    },
-    {
-               "tag": "flyvless",
-               "type": "vless",
-               "server": "23.227.39.24",
-               "server_port": 2053,
-               "uuid": "04abb5f5-f302-4530-94e7-9b30155b58ed",
-               "flow": "",
-               "tls": {
-                  "enabled": true,
-                  "server_name": "flyvless2.wyw1018.cloudns.org",
-                  "insecure": false,
-                  "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                  }
-               },
-               "multiplex": {
-                  "enabled": false,
-                  "protocol": "smux",
-                  "max_streams": 32
-               },
-               "packet_encoding": "xudp",
-               "transport": {
-                  "type": "ws",
-                  "path": "/fly",
-                  "headers": {
-                      "Host": "flyvless2.wyw1018.cloudns.org"
-                  }
-              }
-    },
-    {
-            "type": "wireguard",
-            "tag": "proxy B",
-            "server": "162.159.192.248",
-            "server_port": 4500,
-            "local_address": [
-                "172.16.0.2/32",
-                "2606:4700::/128"
-            ],
-            "private_key": "0NpKEaMJuTbUBnMPnDQMkBpvteIosjtt4IUTCPNNQEo=",
-            "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-            "reserved":[0, 0, 0],
-            "mtu": 1280
-    },
-    {
-            "type": "wireguard",
-            "tag": "proxy C",
-            "server": "188.114.98.18",
-            "server_port": 3138,
-            "local_address": [
-                "172.16.0.2/32",
-                "2606:4700::/128"
-            ],
-            "private_key": "0NpKEaMJuTbUBnMPnDQMkBpvteIosjtt4IUTCPNNQEo=",
-            "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-            "reserved":[0, 0, 0],
-            "mtu": 1280
-    },
-    {
-            "type": "wireguard",
-            "tag": "proxy D",
-            "server": "162.159.195.238",
-            "server_port": 3138,
-            "local_address": [
-                "172.16.0.2/32",
-                "2606:4700::/128"
-            ],
-            "private_key": "0NpKEaMJuTbUBnMPnDQMkBpvteIosjtt4IUTCPNNQEo=",
-            "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-            "reserved":[0, 0, 0],
-            "mtu": 1280
     },
     {
             "type": "wireguard",
