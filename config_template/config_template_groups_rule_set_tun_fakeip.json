@@ -3,9 +3,11 @@
     "rules": [
       {
          "server": "fakedns",
-         "domain": [
-            "www.youtube.com",
-            "www.googlevideo.com"
+         "domain_suffix": [
+            "youtube.com",
+            "googlevideo.com",
+            "jsdelivr.com",
+            "githubusercontent.com"
          ]
       },
       {
@@ -375,9 +377,11 @@
       },
       {
          "outbound": "select",
-         "domain": [
-            "www.youtube.com",
-            "www.googlevideo.com"
+         "domain_suffix": [
+            "youtube.com",
+            "googlevideo.com",
+            "jsdelivr.com",
+            "githubusercontent.com"
           ]
       },
       {
