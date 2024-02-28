@@ -21,8 +21,13 @@
         ],
         "server": "dns_block"
       },
-      {  "outbound": "any",
-         "server": "direct"
+      {
+        "clash_mode": "direct",
+        "server": "direct"
+      },
+      {
+        "clash_mode": "global",
+        "server": "fakedns"
       },
       {
         "rule_set": [
@@ -42,6 +47,9 @@
           "AAAA"
         ],
         "server": "fakedns"
+      },
+      {  "outbound": "any",
+         "server": "direct"
       }
     ],
     "servers": [
@@ -171,6 +179,12 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/apple.china.conf.srs"
             },
+            {
+                "tag": "geosite-private",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs"
+            }, 
             {
                 "tag": "GeoIP-APNIC-CN-IPv4",
                 "type": "remote",
@@ -337,6 +351,7 @@
         "outbound": "direct",
         "rule_set": [
           "GeoSite-CN",
+          "geosite-private",
           "GeoSite-Apple-CN",
           "GeoIP-APNIC-CN-IPv4",
           "GeoIP-APNIC-CN-IPv6",
