@@ -1,86 +1,111 @@
 {
-  "log": {
-    "level": "debug",
-    "timestamp": true
-  },
-  "experimental": {
-    "clash_api": {
-      "external_controller": "127.0.0.1:9090",
-      "external_ui": "ui",
-      "secret": "",
-      "external_ui_download_url": "https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
-      "external_ui_download_detour": "",
-      "default_mode": "rule"
-    },
-  "cache_file": {
-    "enabled": true,
-    "store_fakeip": false
-    }
-  },
   "dns": {
-    "servers": [
-      {
-        "tag": "proxyDns",
-        "address": "tls://8.8.8.8",
-        "detour": "proxy"
-      },
-      {
-        "tag": "localDns",
-        "address": "https://223.5.5.5/dns-query",
-        "detour": "direct"
-      },
-      {
-        "tag": "block",
-        "address": "rcode://success"
-      }
-    ],
     "rules": [
       {
-        "domain": [
-          "ghproxy.com",
-          "cdn.jsdelivr.net",
-          "testingcf.jsdelivr.net"
+         "server": "fakedns",
+         "domain_suffix": [
+            "youtube.com",
+            "googlevideo.com",
+            "jsdelivr.com",
+            "githubusercontent.com"
+         ]
+      },
+      {
+        "rule_set": [
+           "xiaomiDNSblocklist",
+           "geo_geosite_category-ads-all",
+           "AdGuard-DNS-Filter",
+           "AdGuard-DNS-Filter-Unblock",
+           "hagezi-proplus",
+           "1hosts-pro"
         ],
-        "server": "localDns"
+        "server": "dns_block"
+      },
+      {  "outbound": "any",
+         "server": "direct"
       },
       {
-        "rule_set": "geosite-category-ads-all",
-        "server": "block"
+        "rule_set": [
+          "GeoSite-CN",
+          "GeoSite-Apple-CN",
+          "GeoIP-APNIC-CN-IPv4",
+          "GeoIP-APNIC-CN-IPv6",
+          "GeoIP-MaxMind-CN-IPv4",
+          "GeoIP-MaxMind-CN-IPv6",
+          "GeoIP-ChnRoutes2-CN-IPv4"
+        ],
+        "server": "direct"
       },
       {
-        "outbound": "any",
-        "server": "localDns",
-        "disable_cache": true
-      },  
-      {
-        "clash_mode": "direct",
-        "server": "localDns"
-      },
-      {
-        "clash_mode": "global",
-        "server": "proxyDns"
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakedns"
       }
     ],
+    "servers": [
+      {
+        "address": "https://8.8.8.8/dns-query",
+        "address_resolver": "direct",
+        "strategy": "ipv4_only",
+        "tag": "remote"
+      },
+      {
+        "address": "https://223.5.5.5/dns-query",
+        "address_resolver": "bootstrap",
+        "strategy": "ipv4_only",
+        "detour": "direct",
+        "tag": "direct"
+      },
+      {
+        "address": "223.5.5.5",
+        "strategy": "ipv4_only",
+        "detour": "direct",
+        "tag": "bootstrap"
+      },
+      {
+        "tag": "dns_block",
+        "address": "rcode://success"
+      },
+      {
+        "tag": "fakedns",
+        "address": "fakeip"
+      }
+    ],
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    },
+    "independent_cache": true,
     "strategy": "ipv4_only"
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "store_fakeip": false
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "external_ui": "xd",
+      "external_ui_download_detour": "direct",
+      "external_ui_download_url": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+    }
   },
   "inbounds": [
     {
-      "type": "tun",
-      "inet4_address": "172.19.0.1/30",
-      "mtu": 9000,
       "auto_route": true,
-      "strict_route": true,
-      "sniff": true,
       "endpoint_independent_nat": false,
-      "stack": "system",
-      "platform": {
-        "http_proxy": {
-          "enabled": true,
-          "server": "127.0.0.1",
-          "server_port": 2080
-        }
-      }
-    },
+      "inet4_address": "172.19.0.1/30",
+      "inet6_address": "fdfe:dcba:9876::1/126",
+      "mtu": 9000,
+      "sniff": true,
+      "stack": "gvisor",
+      "strict_route": true,
+      "tag": "tun-in",
+      "type": "tun"
+    }
     {
       "type": "mixed",
       "listen": "127.0.0.1",
@@ -89,54 +114,202 @@
       "users": []
     }
   ],
+  "log": {
+    "level": "debug",
+    "timestamp": true
+  },
   "outbounds": [
     {
-      "tag":"proxy",
-      "type":"selector",
-      "outbounds":[
-        "auto",
+      "tag": "select",
+      "type": "selector",
+      "outbounds": [
         "direct",
-        "{all}"
+        "{all}",
+        "proxy E"
       ]
     },
     {
-      "tag":"auto",
-      "type":"urltest",
-      "outbounds":[
-        "{all}"
-      ],
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "10m",
-      "tolerance": 50
+      "tag": "direct",
+      "type": "direct"
     },
     {
-      "type": "direct",
-      "tag": "direct"
+      "tag": "block",
+      "type": "block"
     },
     {
-      "type": "dns",
-      "tag": "dns-out"
+      "tag": "dns",
+      "type": "dns"
     },
     {
-      "type": "block",
-      "tag": "block"
+            "type": "wireguard",
+            "tag": "proxy E",
+            "server": "162.159.195.93",
+            "server_port": 3138,
+            "local_address": [
+                "172.16.0.2/32",
+                "2606:4700::/128"
+            ],
+            "private_key": "0NpKEaMJuTbUBnMPnDQMkBpvteIosjtt4IUTCPNNQEo=",
+            "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+            "reserved":[0, 0, 0],
+            "mtu": 1280
     }
   ],
   "route": {
     "auto_detect_interface": true,
-    "final": "proxy",
+    "override_android_vpn": true,
+    "rule_set": [
+            {
+                "tag": "GeoSite-CN",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/accelerated-domains.china.conf.srs"
+            },
+            {
+                "tag": "GeoSite-Apple-CN",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/apple.china.conf.srs"
+            },
+            {
+                "tag": "GeoIP-APNIC-CN-IPv4",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/apnic-cn-ipv4.srs"
+            },
+            {
+                "tag": "GeoIP-APNIC-CN-IPv6",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/apnic-cn-ipv6.srs"
+            },
+            {
+                "tag": "GeoIP-MaxMind-CN-IPv4",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/maxmind-cn-ipv4.srs"
+            },
+            {
+                "tag": "GeoIP-MaxMind-CN-IPv6",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/maxmind-cn-ipv6.srs"
+            },
+            {
+                "tag": "GeoIP-ChnRoutes2-CN-IPv4",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/chnroutes.txt.srs"
+            },
+            {
+                 "tag": "xiaomiDNSblocklist",
+                 "type": "remote",
+                 "format": "source",
+                 "url": "https://gist.githubusercontent.com/wyw1018/87499935e8de21b901cc283133ef69dc/raw/xiaomiDNSblocklist.json"
+            },
+            {
+                 "tag": "geo_geosite_category-ads-all",
+                 "type": "remote",
+                 "format": "binary",
+                 "url": "https://raw.githubusercontent.com/senzyo/sing-box-rules/sing/geo/geosite/category-ads-all.srs"
+            },
+            {
+                "tag": "AdGuard-DNS-Filter",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/filter.txt.srs"
+            },
+            {
+                "tag": "AdGuard-DNS-Filter-Unblock",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/filter.txt.unblock.srs"
+            },
+            {
+                "tag": "hagezi-proplus",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Phoroc/sing-rules/rule-set/hagezi-proplus.srs"
+            },
+            {
+               "tag": "1hosts-pro",
+               "type": "remote",
+               "format": "binary",
+               "url": "https://raw.githubusercontent.com/Phoroc/sing-rules/rule-set/1hosts-pro.srs"
+            }
+    ],
     "rules": [
       {
-        "protocol": "dns",
-        "outbound": "dns-out"
-      },
-      {
-        "network": "udp",
-        "port": 443,
+        "package_name": [
+            "com.miui.notes",
+            "com.sohu.inputmethod.sogou.xiaomi",
+            "com.miui.micloudsyn",
+            "com.miui.vpnsdkmanager",
+            "com.miui.cloudservice",
+            "com.miui.cloudbackup", 
+            "com.miui.newmidrive",
+            "com.miui.guardprovider",
+            "com.miui.analytics",
+            "com.xiaomi.market"
+        ],
         "outbound": "block"
       },
       {
-        "rule_set": "geosite-category-ads-all",
+        "process_name": [
+            "SogouTaskManager",
+            "SogouServices",
+            "SogouInput"
+        ],
+        "outbound": "block"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "protocol": "dns"
+          },
+          {
+            "port": 53
+          }
+        ],
+        "outbound": "dns"
+      },
+      {
+         "outbound": "select",
+         "domain_suffix": [
+            "youtube.com",
+            "googlevideo.com",
+            "jsdelivr.com",
+            "githubusercontent.com"
+          ]
+      },
+      {
+        "rule_set": [
+           "xiaomiDNSblocklist",
+           "geo_geosite_category-ads-all",
+           "AdGuard-DNS-Filter",
+           "AdGuard-DNS-Filter-Unblock",
+           "hagezi-proplus",
+           "1hosts-pro"
+        ],
+        "outbound": "block"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 853
+          },
+          {
+            "network": "udp",
+            "port": 443
+          },
+          {
+            "protocol": "stun"
+          }
+        ],
         "outbound": "block"
       },
       {
@@ -144,8 +317,8 @@
         "outbound": "direct"
       },
       {
-        "clash_mode": "global",
-        "outbound": "proxy"
+          "clash_mode": "Global",
+          "outbound": "select"
       },
       {
         "domain": [
@@ -155,15 +328,22 @@
           "d.metacubex.one"
         ],
         "outbound": "direct"
-      }
-    ],
-    "rule_set": [
+      },
       {
-        "tag": "geosite-category-ads-all",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs",
-        "download_detour": "direct"
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "outbound": "direct",
+        "rule_set": [
+          "GeoSite-CN",
+          "GeoSite-Apple-CN",
+          "GeoIP-APNIC-CN-IPv4",
+          "GeoIP-APNIC-CN-IPv6",
+          "GeoIP-MaxMind-CN-IPv4",
+          "GeoIP-MaxMind-CN-IPv6",
+          "GeoIP-ChnRoutes2-CN-IPv4"
+        ]
       }
     ]
   }
