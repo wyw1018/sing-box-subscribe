@@ -202,16 +202,16 @@
                 "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/chnroutes.txt.srs"
             },
             {
-                 "tag": "xiaomiDNSblocklist",
-                 "type": "remote",
-                 "format": "source",
-                 "url": "https://gist.githubusercontent.com/wyw1018/87499935e8de21b901cc283133ef69dc/raw/xiaomiDNSblocklist.json"
+                "tag": "xiaomiDNSblocklist",
+                "type": "local",
+                "format": "source",
+                "path": "e:/sing-box-1.8.5-windows-amd64/xiaomiDNSblocklist.json"
             },
             {
                  "tag": "geo_geosite_category-ads-all",
                  "type": "remote",
                  "format": "binary",
-                 "url": "https://raw.githubusercontent.com/senzyo/sing-box-rules/sing/geo/geosite/category-ads-all.srs"
+                 "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs"
             },
             {
                 "tag": "AdGuard-DNS-Filter",
