@@ -11,6 +11,12 @@
          ]
       },
       {
+          "server": "ALIDNS_DOH",
+          "domain_suffix": [
+             "cnbearing.net"
+          ]
+      },
+      {
         "rule_set": [
            "xiaomiDNSblocklist",
            "geo_geosite_category-ads-all",
@@ -296,6 +302,12 @@
             "jsdelivr.com",
             "githubusercontent.com"
           ]
+      },
+      {
+         "outbound": "direct",
+         "domain_suffix": [
+            "cnbearing.net"
+         ]
       },
       {
         "rule_set": [
