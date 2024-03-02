@@ -42,10 +42,10 @@
           "ChinaMax_All",
           "GeoSite-Apple-CN",
           "GeoIP-APNIC-CN-IPv4",
-          "GeoIP-APNIC-CN-IPv6",
           "GeoIP-MaxMind-CN-IPv4",
-          "GeoIP-MaxMind-CN-IPv6",
-          "GeoIP-ChnRoutes2-CN-IPv4"
+          "GeoIP-ChnRoutes2-CN-IPv4",
+          "GeoIP-APNIC-CN-IPv6",
+          "GeoIP-MaxMind-CN-IPv6"
         ],
         "server": "ALIDNS_DOH"
       },
@@ -375,10 +375,10 @@
           "geosite-private",
           "GeoSite-Apple-CN",
           "GeoIP-APNIC-CN-IPv4",
-          "GeoIP-APNIC-CN-IPv6",
           "GeoIP-MaxMind-CN-IPv4",
-          "GeoIP-MaxMind-CN-IPv6",
-          "GeoIP-ChnRoutes2-CN-IPv4"
+          "GeoIP-ChnRoutes2-CN-IPv4",
+          "GeoIP-APNIC-CN-IPv6",
+          "GeoIP-MaxMind-CN-IPv6" 
         ]
       }
     ]
