@@ -39,6 +39,7 @@
       {
         "rule_set": [
           "GeoSite-CN",
+          "ChinaMax_All",
           "GeoSite-Apple-CN",
           "GeoIP-APNIC-CN-IPv4",
           "GeoIP-APNIC-CN-IPv6",
@@ -184,6 +185,12 @@
                 "type": "remote",
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/apple.china.conf.srs"
+            },
+            {
+                "tag": "ChinaMax_All",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/tangnahuaite/sing-box_Route-rules/main/rule_srs/ChinaMax_All.srs"
             },
             {
                 "tag": "geosite-private",
@@ -364,6 +371,7 @@
         "outbound": "direct",
         "rule_set": [
           "GeoSite-CN",
+          "ChinaMax_All",
           "geosite-private",
           "GeoSite-Apple-CN",
           "GeoIP-APNIC-CN-IPv4",
