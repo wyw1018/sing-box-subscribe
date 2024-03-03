@@ -11,7 +11,7 @@
          ]
       },
       {
-         "server": "ALIDNS_DOH",
+         "server": "GOOGLEDNS_DOH",
          "domain": [
            "mail.google.com"
          ]
