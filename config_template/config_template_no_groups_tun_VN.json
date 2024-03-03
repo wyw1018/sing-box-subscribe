@@ -11,6 +11,12 @@
          ]
       },
       {
+         "server": "ALIDNS_DOH",
+         "domain": [
+           "mail.google.com"
+         ]
+      },
+      {
           "server": "ALIDNS_DOH",
           "domain_suffix": [
              "cnbearing.net",
