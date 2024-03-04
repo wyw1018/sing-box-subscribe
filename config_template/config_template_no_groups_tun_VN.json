@@ -44,8 +44,7 @@
       {
         "rule_set": [
           "GeoSite-CN",
-          "geosite-geolocation-cn",
-          "ChinaMax_All"
+          "geosite-geolocation-cn"
         ],
         "server": "ALIDNS_DOH"
       },
