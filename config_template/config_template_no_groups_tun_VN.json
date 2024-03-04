@@ -28,6 +28,11 @@
         ],
         "server": "dns_block"
       },
+      {  
+         "outbound": "any",
+         "server": "ALIDNS_DOH",
+         "disable_cache": true
+      },
       {
         "clash_mode": "direct",
         "server": "ALIDNS_DOH"
@@ -38,14 +43,11 @@
       },
       {
         "rule_set": [
-          "GeoSite-CN"
+          "GeoSite-CN",
+          "geosite-geolocation-cn",
+          "ChinaMax_All"
         ],
         "server": "ALIDNS_DOH"
-      },
-      {  
-         "outbound": "any",
-         "server": "ALIDNS_DOH",
-         "disable_cache": true
       },
       {
         "query_type": [
@@ -360,6 +362,8 @@
         "rule_set": [
           "geosite-private",
           "GeoSite-CN",
+          "geosite-geolocation-cn",
+          "ChinaMax_All", 
           "GeoIP-APNIC-CN-IPv4",
           "GeoIP-MaxMind-CN-IPv4",
           "GeoIP-ChnRoutes2-CN-IPv4"
