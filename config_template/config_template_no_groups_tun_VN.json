@@ -28,11 +28,6 @@
         ],
         "server": "dns_block"
       },
-      {  
-         "outbound": "any",
-         "server": "ALIDNS_DOH",
-         "disable_cache": true
-      },
       {
         "clash_mode": "direct",
         "server": "ALIDNS_DOH"
@@ -52,6 +47,11 @@
           "GeoIP-ChnRoutes2-CN-IPv4"
         ],
         "server": "ALIDNS_DOH"
+      },
+      {  
+         "outbound": "any",
+         "server": "ALIDNS_DOH",
+         "disable_cache": true
       },
       {
         "query_type": [
