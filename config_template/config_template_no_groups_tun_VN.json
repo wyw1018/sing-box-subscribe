@@ -43,8 +43,7 @@
       },
       {
         "rule_set": [
-          "GeoSite-CN",
-          "ChinaMax_All"
+          "GeoSite-CN"
         ],
         "server": "ALIDNS_DOH"
       },
@@ -371,7 +370,6 @@
         "rule_set": [
           "geosite-private",
           "GeoSite-CN",
-          "ChinaMax_All",
           "geoip-cn",
           "GeoIP-APNIC-CN-IPv4",
           "GeoIP-MaxMind-CN-IPv4",
