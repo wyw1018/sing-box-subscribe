@@ -188,12 +188,6 @@
                 "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
             },
             {
-                "tag": "ChinaMax_All",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://raw.githubusercontent.com/tangnahuaite/sing-box_Route-rules/main/rule_srs/ChinaMax_All.srs"
-            },
-            {
                 "tag": "geosite-private",
                 "type": "remote",
                 "format": "binary",
@@ -362,7 +356,7 @@
           "geosite-private",
           "GeoSite-CN",
           "geosite-geolocation-cn",
-          "ChinaMax_All", 
+          "geoip-cn",
           "GeoIP-APNIC-CN-IPv4",
           "GeoIP-MaxMind-CN-IPv4",
           "GeoIP-ChnRoutes2-CN-IPv4"
