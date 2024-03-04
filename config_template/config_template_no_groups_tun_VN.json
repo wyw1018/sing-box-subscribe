@@ -39,8 +39,6 @@
       {
         "rule_set": [
           "GeoSite-CN",
-          "geosite-geolocation-cn",
-          "geoip-cn",
           "GeoIP-APNIC-CN-IPv4",
           "GeoIP-MaxMind-CN-IPv4",
           "GeoIP-ChnRoutes2-CN-IPv4"
@@ -365,8 +363,6 @@
         "rule_set": [
           "geosite-private",
           "GeoSite-CN",
-          "geosite-geolocation-cn",
-          "geoip-cn",
           "GeoIP-APNIC-CN-IPv4",
           "GeoIP-MaxMind-CN-IPv4",
           "GeoIP-ChnRoutes2-CN-IPv4"
