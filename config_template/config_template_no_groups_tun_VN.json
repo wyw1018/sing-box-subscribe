@@ -40,7 +40,6 @@
         "rule_set": [
           "GeoSite-CN",
           "geosite-geolocation-cn",
-          "ChinaMax_All",
           "geoip-cn",
           "GeoIP-APNIC-CN-IPv4",
           "GeoIP-MaxMind-CN-IPv4",
@@ -367,7 +366,6 @@
           "geosite-private",
           "GeoSite-CN",
           "geosite-geolocation-cn",
-          "ChinaMax_All",
           "geoip-cn",
           "GeoIP-APNIC-CN-IPv4",
           "GeoIP-MaxMind-CN-IPv4",
