@@ -43,19 +43,15 @@
       },
       {
         "rule_set": [
-          "GeoSite-CN"
-        ],
-        "server": "ALIDNS_DOH"
-      },
-      {
-        "rule_set": [
+          "GeoSite-CN",
+          "geosite-geolocation-cn",
+          "ChinaMax_All",
           "geoip-cn",
           "GeoIP-APNIC-CN-IPv4",
           "GeoIP-MaxMind-CN-IPv4",
           "GeoIP-ChnRoutes2-CN-IPv4"
         ],
-        "server": "GOOGLEDNS_DOH",
-        "client_subnet": "114.114.114.114"
+        "server": "ALIDNS_DOH"
       },
       {
         "query_type": [
@@ -370,6 +366,8 @@
         "rule_set": [
           "geosite-private",
           "GeoSite-CN",
+          "geosite-geolocation-cn",
+          "ChinaMax_All",
           "geoip-cn",
           "GeoIP-APNIC-CN-IPv4",
           "GeoIP-MaxMind-CN-IPv4",
