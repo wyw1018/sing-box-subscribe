@@ -42,10 +42,14 @@
       },
       {
         "rule_set": [
-          "GeoSite-CN",
           "geosite-geolocation-cn"
         ],
         "server": "ALIDNS_DOH"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "server": "GOOGLEDNS_DOH",
+        "client_subnet": "114.114.114.114"
       },
       {
         "query_type": [
@@ -162,12 +166,6 @@
     "override_android_vpn": true,
     "rule_set": [
             {
-                "tag": "GeoSite-CN",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/accelerated-domains.china.conf.srs"
-            },
-            {
                 "type": "remote",
                 "tag": "geosite-geolocation-cn",
                 "format": "binary",
@@ -184,24 +182,6 @@
                "type": "remote",
                "format": "binary",
                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs"
-            },
-            {
-                "tag": "GeoIP-APNIC-CN-IPv4",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/apnic-cn-ipv4.srs"
-            },
-            {
-                "tag": "GeoIP-MaxMind-CN-IPv4",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/maxmind-cn-ipv4.srs"
-            },
-            {
-                "tag": "GeoIP-ChnRoutes2-CN-IPv4",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/chnroutes.txt.srs"
             },
             {
                  "tag": "xiaomiDNSblocklist",
@@ -345,12 +325,8 @@
         "outbound": "direct",
         "rule_set": [
           "geosite-private",
-          "GeoSite-CN",
           "geosite-geolocation-cn",
-          "geoip-cn",
-          "GeoIP-APNIC-CN-IPv4",
-          "GeoIP-MaxMind-CN-IPv4",
-          "GeoIP-ChnRoutes2-CN-IPv4"
+          "geoip-cn"
         ]
       }
     ]
