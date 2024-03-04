@@ -38,10 +38,7 @@
       },
       {
         "rule_set": [
-          "GeoSite-CN",
-          "GeoIP-APNIC-CN-IPv4",
-          "GeoIP-MaxMind-CN-IPv4",
-          "GeoIP-ChnRoutes2-CN-IPv4"
+          "GeoSite-CN"
         ],
         "server": "ALIDNS_DOH"
       },
