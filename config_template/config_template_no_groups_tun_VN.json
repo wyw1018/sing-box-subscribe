@@ -49,14 +49,6 @@
         "server": "ALIDNS_DOH"
       },
       {
-        "rule_set": [
-          "geoip-cn",
-          "GeoIP-APNIC-CN-IPv4"
-        ],
-        "server": "GOOGLEDNS_DOH",
-        "client_subnet": "114.114.114.114"
-      },
-      {
         "query_type": [
           "A",
           "AAAA"
