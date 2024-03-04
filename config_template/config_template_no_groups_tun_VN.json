@@ -11,12 +11,6 @@
          ]
       },
       {
-         "server": "GOOGLEDNS_DOH",
-         "domain": [
-           "mail.google.com"
-         ]
-      },
-      {
           "server": "ALIDNS_DOH",
           "domain_suffix": [
              "cnbearing.net",
@@ -34,6 +28,11 @@
         ],
         "server": "dns_block"
       },
+      {  
+         "outbound": "any",
+         "server": "ALIDNS_DOH",
+         "disable_cache": true
+      },
       {
         "clash_mode": "direct",
         "server": "ALIDNS_DOH"
@@ -45,19 +44,20 @@
       {
         "rule_set": [
           "GeoSite-CN",
-          "ChinaMax_All",
-          "GeoSite-Apple-CN",
-          "GeoIP-APNIC-CN-IPv4",
-          "GeoIP-MaxMind-CN-IPv4",
-          "GeoIP-ChnRoutes2-CN-IPv4",
-          "GeoIP-APNIC-CN-IPv6",
-          "GeoIP-MaxMind-CN-IPv6"
+          "geosite-geolocation-cn",
+          "ChinaMax_All"
         ],
         "server": "ALIDNS_DOH"
       },
-      {  "outbound": "any",
-         "server": "ALIDNS_DOH",
-         "disable_cache": true
+      {
+        "rule_set": [
+          "geoip-cn",
+          "GeoIP-APNIC-CN-IPv4",
+          "GeoIP-MaxMind-CN-IPv4",
+          "GeoIP-ChnRoutes2-CN-IPv4"
+        ],
+        "server": "GOOGLEDNS_DOH",
+        "client_subnet": "114.114.114.114"
       },
       {
         "query_type": [
@@ -187,10 +187,16 @@
                 "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/accelerated-domains.china.conf.srs"
             },
             {
-                "tag": "GeoSite-Apple-CN",
                 "type": "remote",
+                "tag": "geosite-geolocation-cn",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/apple.china.conf.srs"
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            },
+            {
+                "type": "remote",
+                "tag": "geoip-cn",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
             },
             {
                 "tag": "ChinaMax_All",
@@ -211,22 +217,10 @@
                 "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/apnic-cn-ipv4.srs"
             },
             {
-                "tag": "GeoIP-APNIC-CN-IPv6",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/apnic-cn-ipv6.srs"
-            },
-            {
                 "tag": "GeoIP-MaxMind-CN-IPv4",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/maxmind-cn-ipv4.srs"
-            },
-            {
-                "tag": "GeoIP-MaxMind-CN-IPv6",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/maxmind-cn-ipv6.srs"
             },
             {
                 "tag": "GeoIP-ChnRoutes2-CN-IPv4",
@@ -376,15 +370,14 @@
       {
         "outbound": "direct",
         "rule_set": [
-          "GeoSite-CN",
-          "ChinaMax_All",
           "geosite-private",
-          "GeoSite-Apple-CN",
+          "GeoSite-CN",
+          "geosite-geolocation-cn",
+          "ChinaMax_All",
+          "geoip-cn",
           "GeoIP-APNIC-CN-IPv4",
           "GeoIP-MaxMind-CN-IPv4",
-          "GeoIP-ChnRoutes2-CN-IPv4",
-          "GeoIP-APNIC-CN-IPv6",
-          "GeoIP-MaxMind-CN-IPv6" 
+          "GeoIP-ChnRoutes2-CN-IPv4"
         ]
       }
     ]
