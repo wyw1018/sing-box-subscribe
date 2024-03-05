@@ -1,28 +1,6 @@
 {
   "dns": {
     "rules": [
-      {
-         "server": "fakedns",
-         "domain_suffix": [
-            "youtube.com",
-            "googlevideo.com",
-            "jsdelivr.com",
-            "githubusercontent.com",
-            "cnbearing.net",
-            "gaoloumi.cc"
-         ]
-      },
-      {
-        "rule_set": [
-           "xiaomiDNSblocklist",
-           "geo_geosite_category-ads-all",
-           "AdGuard-DNS-Filter",
-           "AdGuard-DNS-Filter-Unblock",
-           "hagezi-proplus",
-           "1hosts-pro"
-        ],
-        "server": "dns_block"
-      },
       {  
          "outbound": "any",
          "server": "ALIDNS_DOH",
@@ -47,10 +25,6 @@
         "strategy": "ipv4_only",
         "detour": "direct",
         "tag": "ALIDNS_DOH"
-      },
-      {
-        "tag": "dns_block",
-        "address": "rcode://success"
       },
       {
         "tag": "fakedns",
@@ -209,14 +183,6 @@
     ],
     "rules": [
       {
-        "process_name": [
-            "SogouTaskManager",
-            "SogouServices",
-            "SogouInput"
-        ],
-        "outbound": "block"
-      },
-      {
         "type": "logical",
         "mode": "or",
         "rules": [
@@ -228,6 +194,14 @@
           }
         ],
         "outbound": "dns"
+      },
+      {
+        "process_name": [
+            "SogouTaskManager",
+            "SogouServices",
+            "SogouInput"
+        ],
+        "outbound": "block"
       },
       {
          "outbound": "select",
