@@ -7,15 +7,10 @@
             "youtube.com",
             "googlevideo.com",
             "jsdelivr.com",
-            "githubusercontent.com"
+            "githubusercontent.com",
+            "cnbearing.net",
+            "gaoloumi.cc"
          ]
-      },
-      {
-          "server": "fakedns",
-          "domain_suffix": [
-             "cnbearing.net",
-             "gaoloumi.cc"
-          ]
       },
       {
         "rule_set": [
