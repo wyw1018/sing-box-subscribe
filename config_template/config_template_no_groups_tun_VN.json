@@ -145,18 +145,6 @@
                 "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/apnic-cn-ipv4.srs"
             },
             {
-                "tag": "xiaomiDNSblocklist",
-                "type": "local",
-                "format": "source",
-                "path": "e:/sing-box-1.8.5-windows-amd64/xiaomiDNSblocklist.json"
-            },
-            {
-                 "tag": "geo_geosite_category-ads-all",
-                 "type": "remote",
-                 "format": "binary",
-                 "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs"
-            },
-            {
                 "tag": "AdGuard-DNS-Filter",
                 "type": "remote",
                 "format": "binary",
@@ -221,8 +209,6 @@
       },
       {
         "rule_set": [
-           "xiaomiDNSblocklist",
-           "geo_geosite_category-ads-all",
            "AdGuard-DNS-Filter",
            "AdGuard-DNS-Filter-Unblock",
            "hagezi-proplus",
