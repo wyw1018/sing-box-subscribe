@@ -245,6 +245,14 @@
         "outbound": "block"
       },
       {
+         "clash_mode": "direct",
+         "outbound": "direct"
+      },
+      {
+         "clash_mode": "global",
+         "outbound": "select"
+      },
+      {
         "domain": [
           "clash.razord.top",
           "yacd.metacubex.one",
