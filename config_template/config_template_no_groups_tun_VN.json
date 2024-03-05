@@ -11,7 +11,7 @@
          ]
       },
       {
-          "server": "ALIDNS_DOH",
+          "server": "fakedns",
           "domain_suffix": [
              "cnbearing.net",
              "gaoloumi.cc"
@@ -34,21 +34,6 @@
          "disable_cache": true
       },
       {
-        "clash_mode": "direct",
-        "server": "ALIDNS_DOH"
-      },
-      {
-        "clash_mode": "global",
-        "server": "fakedns"
-      },
-      {
-        "rule_set": [
-          "GeoSite-CN",
-          "geosite-geolocation-cn"
-        ],
-        "server": "ALIDNS_DOH"
-      },
-      {
         "query_type": [
           "A",
           "AAAA"
@@ -59,22 +44,14 @@
     "servers": [
       {
         "address": "https://8.8.8.8/dns-query",
-        "address_resolver": "ALIDNS_DOH",
         "strategy": "ipv4_only",
         "tag": "GOOGLEDNS_DOH"
       },
       {
         "address": "https://223.5.5.5/dns-query",
-        "address_resolver": "ALIDNS_bootstrap",
         "strategy": "ipv4_only",
         "detour": "direct",
         "tag": "ALIDNS_DOH"
-      },
-      {
-        "address": "223.5.5.5",
-        "strategy": "ipv4_only",
-        "detour": "direct",
-        "tag": "ALIDNS_bootstrap"
       },
       {
         "tag": "dns_block",
@@ -167,7 +144,6 @@
   ],
   "route": {
     "auto_detect_interface": true,
-    "override_android_vpn": true,
     "rule_set": [
             {
                 "tag": "GeoSite-CN",
@@ -238,21 +214,6 @@
     ],
     "rules": [
       {
-        "package_name": [
-            "com.miui.notes",
-            "com.sohu.inputmethod.sogou.xiaomi",
-            "com.miui.micloudsyn",
-            "com.miui.vpnsdkmanager",
-            "com.miui.cloudservice",
-            "com.miui.cloudbackup", 
-            "com.miui.newmidrive",
-            "com.miui.guardprovider",
-            "com.miui.analytics",
-            "com.xiaomi.market"
-        ],
-        "outbound": "block"
-      },
-      {
         "process_name": [
             "SogouTaskManager",
             "SogouServices",
@@ -316,14 +277,6 @@
           }
         ],
         "outbound": "block"
-      },
-      {
-        "clash_mode": "direct",
-        "outbound": "direct"
-      },
-      {
-          "clash_mode": "Global",
-          "outbound": "select"
       },
       {
         "domain": [
