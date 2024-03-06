@@ -191,6 +191,23 @@
         ],
         "outbound": "block"
       },
+            {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 853
+          },
+          {
+            "network": "udp",
+            "port": 443
+          },
+          {
+            "protocol": "stun"
+          }
+        ],
+        "outbound": "block"
+      },
       {
          "outbound": "select",
          "domain_suffix": [
@@ -213,23 +230,6 @@
            "AdGuard-DNS-Filter-Unblock",
            "hagezi-proplus",
            "1hosts-pro"
-        ],
-        "outbound": "block"
-      },
-      {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "port": 853
-          },
-          {
-            "network": "udp",
-            "port": 443
-          },
-          {
-            "protocol": "stun"
-          }
         ],
         "outbound": "block"
       },
