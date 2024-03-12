@@ -213,7 +213,10 @@
             "port": 443
           },
           {
-            "protocol": "stun"
+            "protocol": [
+              "stun",
+              "turn"
+            ]
           }
         ],
         "outbound": "block"
