@@ -7,6 +7,21 @@
          "disable_cache": true
       },
       {
+        "rule_set": [
+          "GeoSite-CN",
+          "geosite-geolocation-cn"
+        ],
+        "server": "ALIDNS_DOH"
+      },
+      {
+        "rule_set": [
+          "geoip-cn",
+          "GeoIP-APNIC-CN-IPv4"
+        ],
+        "server": "GOOGLEDNS_DOH",
+        "client_subnet": "114.114.0.1"
+      },
+      {
         "query_type": [
           "A",
           "AAAA"
@@ -18,6 +33,7 @@
       {
         "address": "https://8.8.8.8/dns-query",
         "strategy": "ipv4_only",
+        "detour": "select",
         "tag": "GOOGLEDNS_DOH"
       },
       {
