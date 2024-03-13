@@ -185,6 +185,7 @@
       },
       {
         "process_name": [
+            "SearchApp.exe",
             "SogouTaskManager",
             "SogouServices",
             "SogouInput"
