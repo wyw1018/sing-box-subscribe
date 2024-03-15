@@ -6,13 +6,7 @@
          "server": "ALIDNS_DOH",
          "disable_cache": true
       },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "fakedns"
-      },
+
       {
         "rule_set": [
           "GeoSite-CN",
