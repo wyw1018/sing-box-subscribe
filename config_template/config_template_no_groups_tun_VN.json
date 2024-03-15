@@ -35,16 +35,10 @@
         "strategy": "ipv4_only",
         "detour": "direct",
         "tag": "ALIDNS_DOH"
-      },
-      {
-        "tag": "fakedns",
-        "address": "fakeip"
       }
+
     ],
-    "fakeip": {
-      "enabled": false,
-      "inet4_range": "28.0.0.1/8"
-    },
+
     "independent_cache": true,
     "strategy": "ipv4_only"
   },
