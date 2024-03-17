@@ -19,8 +19,8 @@
           "geoip-cn",
           "GeoIP-APNIC-CN-IPv4"
         ],
-        "invert": true,
-        "server": "GOOGLEDNS_DOH"
+        "server": "GOOGLEDNS_DOH",
+        "client_subnet": "61.139.2.1"
       }        
     ],
     "servers": [
