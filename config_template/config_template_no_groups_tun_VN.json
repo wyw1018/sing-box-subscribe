@@ -51,7 +51,7 @@
       "external_controller": "127.0.0.1:9090",
       "external_ui": "xd",
       "external_ui_download_detour": "direct",
-      "default_mode": "规则",
+      "default_mode": "Rule",
       "external_ui_download_url": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip"
     }
   },
@@ -218,11 +218,11 @@
         "outbound": "block"
       },
       {
-        "clash_mode": "直连",
+        "clash_mode": "Direct",
         "outbound": "direct"
       },
       {
-        "clash_mode": "全局",
+        "clash_mode": "Global",
         "outbound": "select"
       },      
       {
