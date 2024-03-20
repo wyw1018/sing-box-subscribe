@@ -85,8 +85,7 @@
       "type": "selector",
       "outbounds": [
         "direct",
-        "{all}",
-        "proxy E"
+        "{all}"
       ]
     },
     {
@@ -100,20 +99,6 @@
     {
       "tag": "dns",
       "type": "dns"
-    },
-    {
-            "type": "wireguard",
-            "tag": "proxy E",
-            "server": "162.159.195.93",
-            "server_port": 3138,
-            "local_address": [
-                "172.16.0.2/32",
-                "2606:4700::/128"
-            ],
-            "private_key": "0NpKEaMJuTbUBnMPnDQMkBpvteIosjtt4IUTCPNNQEo=",
-            "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-            "reserved":[0, 0, 0],
-            "mtu": 1280
     }
   ],
   "route": {
