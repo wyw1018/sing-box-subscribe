@@ -6,7 +6,12 @@
          "server": "ALIDNS_DOH",
          "disable_cache": true
       },
-
+      {
+         "domain_keyword": [
+           "google"
+         ],
+         "server": "GOOGLEDNS_DOH"
+      },
       {
         "rule_set": [
           "GeoSite-CN",
@@ -227,6 +232,12 @@
             "githubusercontent.com"
           ]
       },
+      {
+         "domain_keyword": [
+           "google"
+         ],
+         "outbound": "select"
+      },      
       {
          "outbound": "direct",
          "domain_suffix": [
