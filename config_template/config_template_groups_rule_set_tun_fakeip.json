@@ -217,12 +217,6 @@
           ]
       },
       {
-         "domain_keyword": [
-           "google"
-         ],
-         "outbound": "select"
-      },
-      {
          "outbound": "direct",
          "domain_suffix": [
             "cnbearing.net",
@@ -239,6 +233,12 @@
            "1hosts-pro"
         ],
         "outbound": "block"
+      },
+      {
+         "domain_keyword": [
+           "google"
+         ],
+         "outbound": "select"
       },
       {
          "clash_mode": "直连",
