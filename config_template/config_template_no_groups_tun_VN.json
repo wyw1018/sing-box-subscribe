@@ -237,7 +237,7 @@
            "google"
          ],
          "outbound": "select"
-      },      
+      },
       {
          "outbound": "direct",
          "domain_suffix": [
