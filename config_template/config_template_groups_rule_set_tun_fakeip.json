@@ -107,6 +107,12 @@
                 "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
             },
             {
+                "tag": "GeoSite-Google-CN",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/google.china.conf.srs"
+            },        
+            {
                "tag": "geosite-private",
                "type": "remote",
                "format": "binary",
@@ -235,8 +241,8 @@
         "outbound": "block"
       },
       {
-         "domain_keyword": [
-           "google"
+         "rule_set": [
+           "GeoSite-Google-CN"
          ],
          "outbound": "select"
       },
