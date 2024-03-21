@@ -7,8 +7,8 @@
          "disable_cache": true
       },
       {
-         "domain_keyword": [
-           "google"
+         "rule_set": [
+           "GeoSite-Google-CN"
          ],
          "server": "GOOGLEDNS_DOH"
       },
@@ -120,6 +120,12 @@
                 "tag": "geosite-geolocation-cn",
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            },
+            {
+                "tag": "GeoSite-Google-CN",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Dreista/sing-box-rule-set-cn/rule-set/google.china.conf.srs"
             },
             {
                 "type": "remote",
@@ -250,8 +256,8 @@
         "outbound": "block"
       },
       {
-         "domain_keyword": [
-           "google"
+         "rule_set": [
+           "GeoSite-Google-CN"
          ],
          "outbound": "select"
       },
