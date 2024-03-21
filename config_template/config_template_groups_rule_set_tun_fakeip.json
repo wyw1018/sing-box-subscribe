@@ -217,6 +217,12 @@
           ]
       },
       {
+         "domain_keyword": [
+           "google"
+         ],
+         "outbound": "select"
+      },
+      {
          "outbound": "direct",
          "domain_suffix": [
             "cnbearing.net",
