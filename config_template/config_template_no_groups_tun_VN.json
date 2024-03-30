@@ -18,15 +18,7 @@
           "geosite-geolocation-cn"
         ],
         "server": "ALIDNS_DOH"
-      },
-      {
-        "rule_set": [
-          "geoip-cn",
-          "GeoIP-APNIC-CN-IPv4"
-        ],
-        "server": "GOOGLEDNS_DOH",
-        "client_subnet": "61.139.2.1"
-      }        
+      }      
     ],
     "servers": [
       {
@@ -41,9 +33,8 @@
         "detour": "direct",
         "tag": "ALIDNS_DOH"
       }
-
     ],
-
+    "final": "GOOGLEDNS_DOH",
     "independent_cache": true,
     "strategy": "ipv4_only"
   },
@@ -212,8 +203,7 @@
           },
           {
             "protocol": [
-              "stun",
-              "turn"
+              "stun"
             ]
           }
         ],
