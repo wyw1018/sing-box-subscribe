@@ -7,6 +7,10 @@
          "disable_cache": true
       },
       {
+        "clash_mode": "Global",
+        "server": "GOOGLEDNS_DOH"
+      },            
+      {
          "rule_set": [
            "GeoSite-Google-CN"
          ],
