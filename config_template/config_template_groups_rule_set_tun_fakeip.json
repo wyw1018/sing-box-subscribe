@@ -215,6 +215,12 @@
         "outbound": "block"
       },
       {
+        "package_name": [
+            "com.yahoo.mobile.client.android.mial"
+        ],
+        "outbound": "select"
+      },
+      {
          "outbound": "select",
          "domain_suffix": [
             "youtube.com",
