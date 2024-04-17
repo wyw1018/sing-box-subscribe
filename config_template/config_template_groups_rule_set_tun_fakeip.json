@@ -216,7 +216,7 @@
       },
       {
         "package_name": [
-            "com.yahoo.mobile.client.android.mial"
+            "com.yahoo.mobile.client.android.mail"
         ],
         "outbound": "select"
       },
@@ -226,6 +226,7 @@
             "youtube.com",
             "googlevideo.com",
             "jsdelivr.com",
+            "github.com",
             "sagernet.org",
             "githubusercontent.com"
           ]
