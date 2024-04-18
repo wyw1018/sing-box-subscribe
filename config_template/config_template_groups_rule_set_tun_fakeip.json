@@ -132,7 +132,8 @@
                  "type": "remote",
                  "format": "binary",
                  "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs"
-            },
+            }
+      /*
             {
                 "tag": "AdGuard-DNS-Filter",
                 "type": "remote",
@@ -157,6 +158,7 @@
                "format": "binary",
                "url": "https://raw.githubusercontent.com/Phoroc/sing-rules/rule-set/1hosts-pro.srs"
             }
+      */
     ],
     "rules": [
       {
@@ -241,11 +243,13 @@
       {
         "rule_set": [
            "xiaomiDNSblocklist",
-           "geo_geosite_category-ads-all",
+           "geo_geosite_category-ads-all"
+      /*
            "AdGuard-DNS-Filter",
            "AdGuard-DNS-Filter-Unblock",
            "hagezi-proplus",
            "1hosts-pro"
+      */
         ],
         "outbound": "block"
       },
