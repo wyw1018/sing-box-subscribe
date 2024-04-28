@@ -139,6 +139,8 @@
         "package_name": [
             "com.miui.notes",
             "com.sohu.inputmethod.sogou.xiaomi",
+            "com.baidu.input_mi",
+            "com.iflytek.inputmethod.miui",
             "com.miui.micloudsyn",
             "com.miui.vpnsdkmanager",
             "com.miui.cloudservice",
