@@ -241,6 +241,9 @@
       },
       {
          "outbound": "direct",
+         "domain": [
+           "baike.baidu.com"
+         ],
          "domain_suffix": [
             "cnbearing.net",
             "baike.baidu.com",
